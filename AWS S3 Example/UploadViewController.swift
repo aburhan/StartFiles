@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AWSS3
+//TODO: import AWSS3
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
@@ -15,8 +15,8 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate,UI
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     let picker = UIImagePickerController()
-    let transfermanager = AWSS3TransferManager.default()
-    let S3BucketName = "codebean-s3-sample"
+    //TODO: Create a TransferManager instance
+    //TODO: Setup S3 bucket "let S3BucketName = "YOUR BUCKET NAME""
 
     var localPath: URL!
     var selectedImage: UIImage!{
@@ -35,30 +35,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate,UI
         present(picker, animated: true, completion: nil)
     }
     @IBAction func saveButton(_ sender: Any) {
-        guard let image = imageView.image else {return}
-        let data = UIImagePNGRepresentation(image)
-        let remoteName = "test.png"
-        let fileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(remoteName)
-        do {
-            try data?.write(to: fileURL)
-            localPath = fileURL
-            let uploadRequest = AWSS3TransferManagerUploadRequest()
-            uploadRequest?.body = fileURL
-            uploadRequest?.key = ProcessInfo.processInfo.globallyUniqueString + ".png"
-            uploadRequest?.bucket = S3BucketName
-            uploadRequest?.contentType = "image/png"
-            
-            let transferManager = AWSS3TransferManager.default()
-            transferManager.upload(uploadRequest!).continueWith { (task) -> AnyObject! in
-                if let error = task.error {
-                    print("Upload failed (\(error))")
-                }
-                return nil
-            }
-        }
-        catch {
-            print("File not save failed")
-        }
+        //TODO: when save button is pressed upload files to S3
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
     
