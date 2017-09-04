@@ -1,0 +1,6 @@
+framework module Pods_AWS_S3_Example {
+  umbrella header "Pods-AWS S3 Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

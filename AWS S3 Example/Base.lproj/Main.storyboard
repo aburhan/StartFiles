@@ -1,14 +1,73 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DbS-m6-Ncv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--S3 Transfer Manager Example-->
+        <scene sceneID="A5p-WY-mgj">
+            <objects>
+                <viewController id="lbg-dd-clB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Jn-Sq-AhM"/>
+                        <viewControllerLayoutGuide type="bottom" id="pNV-fl-82Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cuc-Hi-kiR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ego-Be-ptY">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ez4-cz-zkQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="301.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                        <state key="normal" title="Upload">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Jzy-TL-pSR" kind="show" id="PcL-NO-a8U"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bl7-wf-lPW">
+                                        <rect key="frame" x="0.0" y="301.5" width="343" height="301.5"/>
+                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                        <state key="normal" title="Download">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="QiL-XR-Z9d"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ego-Be-ptY" firstAttribute="leading" secondItem="Cuc-Hi-kiR" secondAttribute="leadingMargin" id="Qsj-PG-3py"/>
+                            <constraint firstItem="pNV-fl-82Z" firstAttribute="top" secondItem="ego-Be-ptY" secondAttribute="bottom" id="YxI-zG-ZHx"/>
+                            <constraint firstItem="ego-Be-ptY" firstAttribute="top" secondItem="4Jn-Sq-AhM" secondAttribute="bottom" id="ur2-29-sbf"/>
+                            <constraint firstItem="ego-Be-ptY" firstAttribute="centerX" secondItem="Cuc-Hi-kiR" secondAttribute="centerX" id="x6b-Nq-8da"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="S3 Transfer Manager Example" id="6po-hj-vQD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EAr-Sy-Vbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1244" y="427.73613193403304"/>
+        </scene>
+        <!--Download-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AWS_S3_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +75,98 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VGf-Y2-SrZ">
+                                <rect key="frame" x="67" y="251" width="240" height="164"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VGf-Y2-SrZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="BCd-eC-y1S"/>
+                            <constraint firstItem="VGf-Y2-SrZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="187" id="SMX-D8-gMP"/>
+                            <constraint firstItem="VGf-Y2-SrZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jRM-2K-BRt"/>
+                            <constraint firstItem="VGf-Y2-SrZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pLq-V4-ncp"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Download" id="zOh-s6-2Qx"/>
+                    <connections>
+                        <outlet property="image" destination="VGf-Y2-SrZ" id="n87-Cx-DwD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2020" y="820.83958020989508"/>
+        </scene>
+        <!--Upload-->
+        <scene sceneID="gHK-PK-WYV">
+            <objects>
+                <viewController id="Jzy-TL-pSR" customClass="UploadViewController" customModule="AWS_S3_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U4y-7k-cgp"/>
+                        <viewControllerLayoutGuide type="bottom" id="2YV-5O-z9r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1yL-4s-mUP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNL-Gf-dQw">
+                                <rect key="frame" x="-0.5" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="hKl-7L-PxI">
+                                        <connections>
+                                            <action selector="photoLibrary:" destination="Jzy-TL-pSR" id="hSN-OP-0wF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nn8-4f-Efd">
+                                <rect key="frame" x="67" y="234" width="240" height="198"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nn8-4f-Efd" firstAttribute="leading" secondItem="1yL-4s-mUP" secondAttribute="leadingMargin" constant="51" id="1pH-jd-gla"/>
+                            <constraint firstItem="Nn8-4f-Efd" firstAttribute="top" secondItem="U4y-7k-cgp" secondAttribute="bottom" constant="170" id="8bW-ts-kyd"/>
+                            <constraint firstItem="LNL-Gf-dQw" firstAttribute="bottom" secondItem="2YV-5O-z9r" secondAttribute="top" id="FNK-RT-cgt"/>
+                            <constraint firstItem="Nn8-4f-Efd" firstAttribute="centerY" secondItem="1yL-4s-mUP" secondAttribute="centerY" id="bzg-6x-R04"/>
+                            <constraint firstItem="Nn8-4f-Efd" firstAttribute="centerX" secondItem="LNL-Gf-dQw" secondAttribute="centerX" id="pEg-Ye-0UL"/>
+                            <constraint firstItem="Nn8-4f-Efd" firstAttribute="centerX" secondItem="1yL-4s-mUP" secondAttribute="centerX" id="t9Y-BP-YCV"/>
+                            <constraint firstItem="LNL-Gf-dQw" firstAttribute="leading" secondItem="1yL-4s-mUP" secondAttribute="leading" id="xxY-Y8-O1l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Upload" id="CIj-iS-3YT">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="7oy-qe-iNl">
+                            <connections>
+                                <action selector="saveButton:" destination="Jzy-TL-pSR" id="DH2-7z-soY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="Nn8-4f-Efd" id="svg-lY-E8o"/>
+                        <outlet property="saveButton" destination="7oy-qe-iNl" id="JKv-nx-imB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQ3-vx-CZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2020" y="134.48275862068968"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qv6-Lw-LIN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DbS-m6-Ncv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5va-ae-Bkz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lbg-dd-clB" kind="relationship" relationship="rootViewController" id="LdI-9X-bHB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dLx-0q-rIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.80000000000001" y="427.73613193403304"/>
         </scene>
     </scenes>
 </document>
